@@ -1,4 +1,4 @@
-package com.vgarg.algorithms.sorting;
+package com.vgarg.algorithms.codingproblems;
 
 import static java.util.stream.Collectors.toList;
 
