@@ -87,6 +87,27 @@ public class ArrayHeap<T extends Comparable<T>> {
 		}
 		
 	}
+	
+	public void buildArrayHeap() {
+		
+		int lastNonLeafIndex = Math.floorDiv(getHeapSize(), 2) - 1;
+		
+		for (int i=lastNonLeafIndex; i >=0; i--) 
+			maxHeapifyNonRecursive(i);
+		
+	}
+	
+	public void heapSort() {
+		int heapSizeStart = this.heapSize;
+		
+		for (int i=heapSizeStart - 1; i >= 1; i--) {
+			T temp = this.array[i];
+			this.array[i] = this.array[0];
+			this.array[0] = temp;
+			this.heapSize -= 1;
+			maxHeapifyNonRecursive(0);
+		}
+	}
 
 }
 
